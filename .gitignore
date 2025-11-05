@@ -11,10 +11,14 @@ out/
 dist/
 *.local
 
-# dotenv environment files
+# environment files
 .env
 .env.local
 .env.*.local
+
+# keep example env files
+!.env.example
+!.env.local.example
 
 # -----------------------
 # Python (FastAPI / ML service)
