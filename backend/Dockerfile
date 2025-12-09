@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production=false
+RUN npm ci 
 
 # Copy source code
 COPY . .
@@ -18,4 +18,4 @@ RUN npm run build
 EXPOSE 3001
 
 # Start production build
-CMD ["npm", "run", "start:prod"]
+CMD ["node", "dist/main"]
